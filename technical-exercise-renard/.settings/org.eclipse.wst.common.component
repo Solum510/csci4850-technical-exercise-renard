@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="technical-exercise-renard">
+        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <property name="context-root" value="technical-exercise-renard"/>
+        <property name="java-output-path" value="/technical-exercise-renard/build/classes"/>
+    </wb-module>
+</project-modules>
