@@ -71,4 +71,56 @@ public class BlogEntree {
 		this.albumName = albumName;
 		this.ytLink = ytLink;
 	}
+	
+	public void setSongName(String songName) {
+		this.songName = songName;
+	}
+	
+	public void setArtistName(String artistName) {
+		this.artistName = artistName;
+	}
+	
+	public void setAlbumName(String albumName) {
+		this.albumName = albumName;
+	}
+	
+	public void setDesc(String desc) {
+		this.desc = desc;
+	}
+	
+	public void setYtLink(String ytLink) {
+		this.ytLink = ytLink;
+	}
+	
+	public void setId(Integer id) {
+		this.id = id;
+	}
+	
+	public String getSongName() {
+		return this.songName;
+	}
+	
+	public String getArtistName() {
+		return this.artistName;
+	}
+	
+	public String getAlbumName() {
+		return this.albumName;
+	}
+	
+	public String getDesc() {
+		return this.desc;
+	}
+	
+	public String getYtLink() {
+		return this.ytLink;
+	}
+	
+	public Integer getId() {
+		return this.id;
+	}
+	
+	public String toString() {
+		return "id: " + this.id + ", song: " + this.songName + ", artist: " + this.artistName + ", album: " + this.albumName + ", desc: " + this.desc + "youtube: " + this.ytLink;
+	}
 }
