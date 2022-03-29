@@ -24,7 +24,7 @@ CREATE TABLE JazzBlog(
 
 @Entity
 @Table(name = "JazzBlog")
-public class BlogEntree {
+public class BlogEntry {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
@@ -45,10 +45,10 @@ public class BlogEntree {
 	@Column(name = "YT_LINK")
 	private String ytLink;
 	
-	public BlogEntree() {
+	public BlogEntry() {
 	}
 	
-	public BlogEntree(Integer id, String songName, String artistName, String albumName, String desc, String ytLink) {
+	public BlogEntry(Integer id, String songName, String artistName, String albumName, String desc, String ytLink) {
 		this.id = id;
 		this.songName = songName;
 		this.artistName = artistName;
@@ -57,7 +57,7 @@ public class BlogEntree {
 		this.ytLink = ytLink;
 	}
 	
-	public BlogEntree(String songName, String artistName, String albumName, String desc, String ytLink) {
+	public BlogEntry(String songName, String artistName, String albumName, String desc, String ytLink) {
 		this.songName = songName;
 		this.artistName = artistName;
 		this.albumName = albumName;
@@ -65,7 +65,7 @@ public class BlogEntree {
 		this.ytLink = ytLink;
 	}
 	
-	public BlogEntree(String songName, String artistName, String albumName, String ytLink) {
+	public BlogEntry(String songName, String artistName, String albumName, String ytLink) {
 		this.songName = songName;
 		this.artistName = artistName;
 		this.albumName = albumName;
