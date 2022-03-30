@@ -57,7 +57,6 @@ public class Homepage extends HttpServlet {
 		 * desc
 		 * ytlink
 		 */
-		System.out.println("MADE TO POST");
 		try {
 		String song = request.getParameter("songName");
 		String artist = request.getParameter("artist");

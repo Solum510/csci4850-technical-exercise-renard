@@ -13,18 +13,18 @@ import javax.persistence.Table;
 //a short description of why I like the song, 
 //and a link to youtube to listen to the song.
 
-/**
-*@since J2SE-1.8
-CREATE TABLE JazzBlog(
-	id INT NOT NULL AUTO_INCREMENT,
-	SONG_NAME VARCHAR(30) NOT NULL,
-	ARTIST_NAME VARCHAR(30) NOT NULL,
-	ALBUM_NAME VARCHAR(30) NOT NULL,
-	DESC VARCHAR(MAX) NOT NULL,
-	YT_LINK VARCHAR(50) NOT NULL,
-	PRIMARY KEY(id));
-*/
 
+/**
+ * @since J2SE-1.8
+ CREATE TABLE JazzBlog (
+  id INT NOT NULL AUTO_INCREMENT,    
+  SONG_NAME VARCHAR(30) NOT NULL,
+  ARTIST_NAME VARCHAR(30) NOT NULL,   
+  ALBUM_NAME VARCHAR(30) NOT NULL,
+  SONG_DESC VARCHAR(255) NOT NULL,
+  YT_LINK VARCHAR(30) NOT NULL,
+  PRIMARY KEY (id));
+ */
 @Entity
 @Table(name = "JazzBlog")
 public class BlogEntry {
@@ -42,7 +42,7 @@ public class BlogEntry {
 	@Column(name = "ALBUM_NAME")
 	private String albumName;
 	
-	@Column(name = "DESC")
+	@Column(name = "SONG_DESC")
 	private String desc;
 	
 	@Column(name = "YT_LINK")

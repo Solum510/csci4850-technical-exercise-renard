@@ -96,7 +96,6 @@ public class UtilDB {
          System.out.println(test.toString());
          session.save(new BlogEntry(song, artist, album, desc, yt));
          tx.commit();
-         System.out.println("CREATED THE ENTRY");
       } catch (HibernateException e) {
          if (tx != null)
             tx.rollback();
