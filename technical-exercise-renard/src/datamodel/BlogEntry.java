@@ -21,7 +21,7 @@ CREATE TABLE JazzBlog(
 	ARTIST_NAME VARCHAR(60) NOT NULL,
 	ALBUM_NAME VARCHAR(30) NOT NULL,
 	DESC VARCHAR(1000) NOT NULL,
-	YT_LINK VARCHAR(100) NOT NULL
+	YT_LINK VARCHAR(100) NOT NULL,
 	PRIMARY KEY(id));
 */
 
@@ -92,10 +92,11 @@ public class BlogEntry {
 	}
 	
 	public void setYtLink(String ytLink) {
-		String pattern = "(?<=.=)(.+)";
+		/*String pattern = "(?<=.=)(.+)";
 		Pattern r = Pattern.compile(pattern);
 		Matcher m = r.matcher(ytLink);
-		this.ytLink = m.group(0);
+		this.ytLink = m.group(0);*/
+		this.ytLink = ytLink.substring(ytLink.indexOf('=') + 1);
 
 	}
 	
@@ -134,7 +135,7 @@ public class BlogEntry {
 	public String toHtml() {
 		return "<div align=center class=\"entry\">" + 
 				"<big>" + this.songName + "</big>" + 
-				"<p>" + this.artistName +  "-" + this.albumName + "<br>" + 
+				"<p>" + this.artistName +  " - " + this.albumName + "<br>" + 
 				this.desc + "</p><br>" + 
 				"<iframe width=\"420\" height=\"315\"" + 
 				"src=\"https://www.youtube.com/embed/" + this.ytLink + "\">" + 

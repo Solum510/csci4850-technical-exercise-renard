@@ -34,10 +34,12 @@ public class Homepage extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		String html = "";
-		List<BlogEntry> entries = UtilDB.listEntries();
-		for(int i = 0; i < entries.size(); i++) {
-			html += entries.get(i).toHtml();
-		}
+		try {
+			List<BlogEntry> entries = UtilDB.listEntries();
+			for(int i = 0; i < entries.size(); i++) {
+				html += entries.get(i).toHtml();
+			}
+		} catch(Exception e) {}
 		response.getWriter().append(html);
 		RequestDispatcher view = request.getRequestDispatcher("homepage.jsp");
 		view.forward(request, response);
@@ -55,12 +57,15 @@ public class Homepage extends HttpServlet {
 		 * desc
 		 * ytlink
 		 */
+		System.out.println("MADE TO POST");
+		try {
 		String song = request.getParameter("songName");
 		String artist = request.getParameter("artist");
 		String album = request.getParameter("album");
 		String desc = request.getParameter("desc");
 		String ytlink = request.getParameter("ytlink");
 		UtilDB.createEntries(song, album, artist, desc, ytlink);
+		} catch(Exception e) {}
 		doGet(request, response);
 	}
 
