@@ -35,7 +35,7 @@ public class UtilDB {
       return sessionFactory;
    }
 
-   public static List<BlogEntry> listEmployees() {
+   public static List<BlogEntry> listEntries() {
       List<BlogEntry> resultList = new ArrayList<BlogEntry>();
 
       Session session = getSessionFactory().openSession();
@@ -59,7 +59,7 @@ public class UtilDB {
       return resultList;
    }
 
-   public static List<BlogEntry> listEmployees(String keyword) {
+   public static List<BlogEntry> listEntries(String keyword) {
       List<BlogEntry> resultList = new ArrayList<BlogEntry>();
 
       Session session = getSessionFactory().openSession();
