@@ -33,14 +33,15 @@ public class Homepage extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String html = "";
+		String entriesHtml = "";
 		try {
 			List<BlogEntry> entries = UtilDB.listEntries();
 			for(int i = 0; i < entries.size(); i++) {
-				html += entries.get(i).toHtml();
+				entriesHtml += entries.get(i).toHtml();
 			}
 		} catch(Exception e) {}
-		response.getWriter().append(html);
+		response.getWriter().append(entriesHtml);
+		request.setAttribute("entriesHtml", entriesHtml);
 		RequestDispatcher view = request.getRequestDispatcher("homepage.jsp");
 		view.forward(request, response);
 	}

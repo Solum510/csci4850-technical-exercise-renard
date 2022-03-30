@@ -44,7 +44,7 @@ button {
 
 <hr class="solid">
 
-<div align=center>
+<div align=center class="scaffold">
 <div align=center class="entry">
 <big>Don't Destory the Funk</big>
 <p>Phat Phunction - Real Life, High Fidelity<br>
@@ -54,7 +54,7 @@ src="https://www.youtube.com/embed/NqSPLsJaFsE">
 </iframe>
 <br><br>
 </div>
-
+${requestScope["entriesHtml"]}
 
 </div>
 </body>

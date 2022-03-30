@@ -133,7 +133,7 @@ public class BlogEntry {
 	}
 	
 	public String toHtml() {
-		return "<div align=center class=\"entry\">" + 
+		return "<div align=center class=\"entry\">"+ 
 				"<big>" + this.songName + "</big>" + 
 				"<p>" + this.artistName +  " - " + this.albumName + "<br>" + 
 				this.desc + "</p><br>" + 
