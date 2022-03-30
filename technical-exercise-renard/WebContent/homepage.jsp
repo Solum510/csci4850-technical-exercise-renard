@@ -10,8 +10,6 @@ hr.solid {
   border-top: 3px solid #bbb;
 }
 
-
-
 menu {
   display: flex;
   list-style: none;
@@ -27,6 +25,8 @@ button {
   width: 100%;
 }
 </style>
+
+
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Nathan's Jazz Blog</title>
 </head>
@@ -37,8 +37,15 @@ button {
   	<li><button onclick="">New Entry</button></li>
 </menu>
 <hr class="solid">
-<a href="https://www.mozilla.org/en-US/about/manifesto/">Mozilla Manifesto</a>
-
+<div align=center>
+<big>Don't Destory the Funk</big>
+<p>Phat Phunction - Real Life, High Fidelity<br>
+It's just kinda funky, ya feel?</p><br>
+<iframe width="420" height="315"
+src="https://www.youtube.com/embed/NqSPLsJaFsE">
+</iframe>
+<br>
+</div>
 </body>
 </html>
 
