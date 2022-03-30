@@ -38,8 +38,8 @@ button {
 <body>
 <h1>Welcome to Nathan's Jazz Blog!</h1>
 <menu>  
-	<li><button onclick="">Home</button></li>
-  	<li><button onclick="">New Entry</button></li>
+	<li><button onclick="window.location='homepage.jsp';">Home</button></li>
+  	<li><button onclick="window.location='addEntry.jsp';">New Entry</button></li>
 </menu>
 
 <hr class="solid">
