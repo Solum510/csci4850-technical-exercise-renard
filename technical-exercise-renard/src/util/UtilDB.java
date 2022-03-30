@@ -92,6 +92,8 @@ public class UtilDB {
       Transaction tx = null;
       try {
          tx = session.beginTransaction();
+         BlogEntry test = new BlogEntry(song, artist, album, desc, yt);
+         System.out.println(test.toString());
          session.save(new BlogEntry(song, artist, album, desc, yt));
          tx.commit();
          System.out.println("CREATED THE ENTRY");
