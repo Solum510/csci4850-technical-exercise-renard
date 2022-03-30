@@ -24,11 +24,6 @@ li {
 button {
   width: 100%;
 }
-
-.entry{
-	width: 435px;
-	border: 5px groove #34dbeb;
-}
 </style>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -42,7 +37,7 @@ button {
 </menu>
 <hr class="solid">
 
-<form action="homepage.jsp">
+<form action="Homepage" method="post">
   <label for="songName">Song name:</label><br>
   <input type="text" id="songName" name="songName"><br>
   <label for="artist">Artist:</label><br>
