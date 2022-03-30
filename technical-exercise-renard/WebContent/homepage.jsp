@@ -27,7 +27,7 @@ button {
 
 .entry{
 	width: 435px;
-	border: 5px groove red;
+	border: 5px groove #34dbeb;
 }
 </style>
 
@@ -45,13 +45,6 @@ button {
 <hr class="solid">
 
 <div align=center>
-<big>Don't Destory the Funk</big>
-<p>Phat Phunction - Real Life, High Fidelity<br>
-It's just kinda funky, ya feel?</p><br>
-<iframe width="420" height="315"
-src="https://www.youtube.com/embed/NqSPLsJaFsE">
-</iframe>
-<br></br>
 <div align=center class="entry">
 <big>Don't Destory the Funk</big>
 <p>Phat Phunction - Real Life, High Fidelity<br>
@@ -59,19 +52,10 @@ It's just kinda funky, ya feel?</p><br>
 <iframe width="420" height="315"
 src="https://www.youtube.com/embed/NqSPLsJaFsE">
 </iframe>
-<br>
-</div>
+<br><br>
 </div>
 
 
-<div align=center class="entry">
-<big>Don't Destory the Funk</big>
-<p>Phat Phunction - Real Life, High Fidelity<br>
-It's just kinda funky, ya feel?</p><br>
-<iframe width="420" height="315"
-src="https://www.youtube.com/embed/NqSPLsJaFsE">
-</iframe>
-<br>
 </div>
 </body>
 </html>

@@ -1,4 +1,7 @@
 package datamodel;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -54,7 +57,7 @@ public class BlogEntry {
 		this.artistName = artistName;
 		this.albumName = albumName;
 		this.desc = desc;
-		this.ytLink = ytLink;
+		this.setYtLink(ytLink);
 	}
 	
 	public BlogEntry(String songName, String artistName, String albumName, String desc, String ytLink) {
@@ -62,14 +65,14 @@ public class BlogEntry {
 		this.artistName = artistName;
 		this.albumName = albumName;
 		this.desc = desc;
-		this.ytLink = ytLink;
+		this.setYtLink(ytLink);
 	}
 	
 	public BlogEntry(String songName, String artistName, String albumName, String ytLink) {
 		this.songName = songName;
 		this.artistName = artistName;
 		this.albumName = albumName;
-		this.ytLink = ytLink;
+		this.setYtLink(ytLink);
 	}
 	
 	public void setSongName(String songName) {
@@ -89,7 +92,11 @@ public class BlogEntry {
 	}
 	
 	public void setYtLink(String ytLink) {
-		this.ytLink = ytLink;
+		String pattern = "(?<=.=)(.+)";
+		Pattern r = Pattern.compile(pattern);
+		Matcher m = r.matcher(ytLink);
+		this.ytLink = m.group(0);
+
 	}
 	
 	public void setId(Integer id) {
@@ -122,5 +129,17 @@ public class BlogEntry {
 	
 	public String toString() {
 		return "id: " + this.id + ", song: " + this.songName + ", artist: " + this.artistName + ", album: " + this.albumName + ", desc: " + this.desc + "youtube: " + this.ytLink;
+	}
+	
+	public String toHtml() {
+		return "<div align=center class=\"entry\">" + 
+				"<big>" + this.songName + "</big>" + 
+				"<p>" + this.artistName +  "-" + this.albumName + "<br>" + 
+				this.desc + "</p><br>" + 
+				"<iframe width=\"420\" height=\"315\"" + 
+				"src=\"https://www.youtube.com/embed/" + this.ytLink + "\">" + 
+				"</iframe>" + 
+				"<br><br>" + 
+				"</div>";
 	}
 }
