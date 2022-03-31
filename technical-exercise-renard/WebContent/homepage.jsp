@@ -46,6 +46,8 @@ button {
 
 <div align=center class="scaffold">
 ${requestScope["entriesHtml"]}
+${requestScope["warning"]}
+
 
 </div>
 </body>
