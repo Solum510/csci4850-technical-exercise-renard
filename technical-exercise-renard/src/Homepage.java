@@ -18,6 +18,7 @@ import util.UtilDB;
  */
 @WebServlet("/Homepage")
 public class Homepage extends HttpServlet {
+	String entriesHtml = "";
 	private static final long serialVersionUID = 1L;
        
     /**
@@ -33,7 +34,6 @@ public class Homepage extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String entriesHtml = "";
 		try {
 			List<BlogEntry> entries = UtilDB.listEntries();
 			for(int i = 0; i < entries.size(); i++) {
@@ -58,14 +58,17 @@ public class Homepage extends HttpServlet {
 		 * desc
 		 * ytlink
 		 */
-		try {
+		if(BlogEntry.checkYtLink(request.getParameter("ytlink"))) {
 		String song = request.getParameter("songName");
 		String artist = request.getParameter("artist");
 		String album = request.getParameter("album");
 		String desc = request.getParameter("desc");
 		String ytlink = request.getParameter("ytlink");
 		UtilDB.createEntries(song, album, artist, desc, ytlink);
-		} catch(Exception e) {}
+		} else {
+			entriesHtml += "<script>alert(\"Youtube link was not valid\")</script>";
+		}
+		
 		doGet(request, response);
 	}
 

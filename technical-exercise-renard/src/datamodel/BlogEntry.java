@@ -132,6 +132,9 @@ public class BlogEntry {
 		return "id: " + this.id + ", song: " + this.songName + ", artist: " + this.artistName + ", album: " + this.albumName + ", desc: " + this.desc + "youtube: " + this.ytLink;
 	}
 	
+	public static boolean checkYtLink(String link) {
+		return link.indexOf('=') > -1;
+	}
 	public String toHtml() {
 		return "<div align=center class=\"entry\">"+ 
 				"<big>" + this.songName + "</big>" + 
