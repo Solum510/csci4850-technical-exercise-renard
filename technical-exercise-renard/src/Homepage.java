@@ -58,6 +58,7 @@ public class Homepage extends HttpServlet {
 		 * desc
 		 * ytlink
 		 */
+		entriesHtml = "";
 		if(BlogEntry.checkYtLink(request.getParameter("ytlink"))) {
 		String song = request.getParameter("songName");
 		String artist = request.getParameter("artist");
