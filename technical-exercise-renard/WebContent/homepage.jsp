@@ -29,6 +29,13 @@ button {
 	width: 435px;
 	border: 5px groove #34dbeb;
 }
+input.menu{
+	width: 100px;
+}
+
+div.grid{
+	display: inline-block;
+}
 </style>
 
 
@@ -37,16 +44,16 @@ button {
 </head>
 <body>
 <h1>Welcome to Nathan's Jazz Blog!</h1>
-<menu>  
-	<li><button onclick="window.location='homepage.jsp';">Home</button></li>
-  	<li><button onclick="window.location='addEntry.jsp';">New Entry</button></li>
-</menu>
+<div>
+	<div class="grid"><form action="Homepage" method="post"><input class = "menu" type="submit" value="Home"></form>
+	</div><div class="grid">
+  	<form action="AddEntry" method="get"><input class = "menu"type="submit" value="New Entry"></form></div>
+  	</div>
 
 <hr class="solid">
 
 <div align=center class="scaffold">
 ${requestScope["entriesHtml"]}
-${requestScope["warning"]}
 
 
 </div>

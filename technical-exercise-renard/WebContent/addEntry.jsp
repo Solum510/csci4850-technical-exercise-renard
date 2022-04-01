@@ -21,8 +21,17 @@ li {
   flex-grow: 1;
 }
 
+label.warn{
+	color: red;
+}
 button {
   width: 100%;
+}
+input.menu{
+	width: 100px;
+}
+div.grid{
+	display: inline-block;
 }
 </style>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -31,15 +40,16 @@ button {
 </head>
 <body>
 <h1>Add an entry to the blog:</h1>
-<menu>  
-	<li><button onclick="window.location='homepage.jsp';">Home</button></li>
-  	<li><button onclick="window.location='addEntry.jsp';">New Entry</button></li>
-</menu>
-<hr class="solid">
+	<div>
+	<div class="grid"><form action="Homepage" method="post"><input class = "menu" type="submit" value="Home"></form>
+	</div><div class="grid">
+  	<form action="AddEntry" method="get"><input class = "menu"type="submit" value="New Entry"></form></div>
+  	</div>
+<hr class="solid"><br>
 
-<form action="Homepage" method="post">
+<form action="AddEntry" method="post">
   <label for="songName">Song name:</label><br>
-  <input type="text" id="songName" name="songName"><br>
+  <input type="text" id="songName" name="songName"><br><br>
   <label for="artist">Artist:</label><br>
   <input type="text" id="artist" name="artist"><br><br>
   <label for="album">Album:</label><br>
@@ -47,9 +57,13 @@ button {
   <label for="desc">Description:</label><br>
   <input type="text" id="desc" name="desc"><br><br>
   <label for="ytlink">Youtube Link:</label><br>
-  <input type="text" id="ytlink" name="ytlink"><br><br>
-  <input type="submit" value="Submit">
-  <input type="reset">
+  <input type="text" id="ytlink" name="ytlink"><br>
+  ${requestScope["warning"]}<br>
+  <div><div class="grid"><input type="submit" value="Submit">
+  </div><div class="grid">
+  <input type="reset"></div></div>
 </form>
+
+
 </body>
 </html>

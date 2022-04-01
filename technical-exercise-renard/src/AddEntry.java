@@ -1,7 +1,6 @@
 
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -14,33 +13,26 @@ import datamodel.BlogEntry;
 import util.UtilDB;
 
 /**
- * Servlet implementation class Homepage
+ * Servlet implementation class AddEntry
  */
-@WebServlet("/Homepage")
-public class Homepage extends HttpServlet {
-	//boolean warn = false;
+@WebServlet("/AddEntry")
+public class AddEntry extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Homepage() {
+    public AddEntry() {
         super();
         // TODO Auto-generated constructor stub
     }
-  
+
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String entriesHtml = "";
-		List<BlogEntry> entries = UtilDB.listEntries();
-		for(int i = 0; i < entries.size(); i++) {
-			entriesHtml += entries.get(i).toHtml();
-		}
-		request.setAttribute("entriesHtml", entriesHtml);
-		RequestDispatcher view = request.getRequestDispatcher("homepage.jsp");
+		RequestDispatcher view = request.getRequestDispatcher("addEntry.jsp");
 		view.forward(request, response);
 	}
 
@@ -48,15 +40,7 @@ public class Homepage extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		/*
-		 * songName
-		 * artist
-		 * album
-		 * desc
-		 * ytlink
-		 */
-		/*String warn = "";
+		String warn = "";
 		if(BlogEntry.checkYtLink(request.getParameter("ytlink"))) {
 		
 		String song = request.getParameter("songName");
@@ -68,9 +52,9 @@ public class Homepage extends HttpServlet {
 		} else {
 			//entriesHtml += "<script>alert(\"Youtube link was not valid\")</script>";
 			//warn = true;
-			warn = "<script>alert(\"Youtube link was not valid\")</script>";
+			warn = "<label for=\"ytlink\" class=\"warn\">Enter a valid Youtube link</label>";
 		}
-		request.setAttribute("warning", warn);*/
+		request.setAttribute("warning", warn);
 		doGet(request, response);
 	}
 
