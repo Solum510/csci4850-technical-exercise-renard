@@ -49,6 +49,7 @@ public class AddEntry extends HttpServlet {
 		String desc = request.getParameter("desc");
 		String ytlink = request.getParameter("ytlink");
 		UtilDB.createEntries(song, album, artist, desc, ytlink);
+		warn = "<label for=\"ytlink\">Entry created successfully</label>";
 		} else {
 			//entriesHtml += "<script>alert(\"Youtube link was not valid\")</script>";
 			//warn = true;
